@@ -52,4 +52,9 @@ public class CalculatorTest {
 			exception = e;
 		}
 	}
+	
+	@Test
+	public void testGreaterThanThousand() {
+		assertEquals(2, Calculator.add("1001,2"));
+	}
 }
