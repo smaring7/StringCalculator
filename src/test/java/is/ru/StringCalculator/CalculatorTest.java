@@ -41,4 +41,15 @@ public class CalculatorTest {
 			exception = e;
 		}
 	}
+	
+	@Test
+	public void testNegatives() {
+		Exception exception = null;
+		try {
+			Calculator.add("2,-4,3,-5");
+		}
+		catch(Exception e) {
+			exception = e;
+		}
+	}
 }
