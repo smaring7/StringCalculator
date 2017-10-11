@@ -7,6 +7,7 @@ public class Calculator {
 			return 0;
 		else if(text.contains(",") || text.contains("\n")) {
 			String numbers[] = text.split("[, \n]");
+			checkForNegatives(numbers);
 			return sum(numbers);
 		}
 		return 1;
@@ -18,6 +19,13 @@ public class Calculator {
 	
 	private static int sum(String[] numbers) {
 		int total = 0;
+			for(String number : numbers) {
+				total += toInt(number);
+			}
+			return total;
+	}
+	
+	private static void checkForNegatives(String[] numbers) {
 		String negatives = "";
 			for(String number : numbers) {
 				if(number.contains("-")) {
@@ -27,12 +35,8 @@ public class Calculator {
 						negatives = negatives + "," + number;
 				}
 				
-				total += toInt(number);
-			}
-			if(negatives != "") 
+				if(negatives != "") 
 				throw new IllegalArgumentException("Negatives not allowed: " + negatives);
-				
-			
-			return total;
+			}
 	}
 }
