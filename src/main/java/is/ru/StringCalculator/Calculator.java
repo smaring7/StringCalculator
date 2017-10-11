@@ -18,9 +18,21 @@ public class Calculator {
 	
 	private static int sum(String[] numbers) {
 		int total = 0;
+		String negatives = "";
 			for(String number : numbers) {
+				if(number.contains("-")) {
+					if(negatives == "")
+						negatives = negatives + number;
+					else
+						negatives = negatives + "," + number;
+				}
+				
 				total += toInt(number);
 			}
+			if(negatives != "") 
+				throw new IllegalArgumentException("Negatives not allowed: " + negatives);
+				
+			
 			return total;
 	}
 }
