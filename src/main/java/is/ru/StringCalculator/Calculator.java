@@ -5,6 +5,13 @@ public class Calculator {
 	public static int add(String text) {
 		if(text.equals(""))
 			return 0;
+		else if(text.startsWith("//")) {
+			String textParts[] = text.split("[// \n]");
+			String delimiter = textParts[2];
+			String numbers[] = textParts[3].split(delimiter);
+			checkForNegatives(numbers);
+			return sum(numbers);
+		}
 		else if(text.contains(",") || text.contains("\n")) {
 			String numbers[] = text.split("[, \n]");
 			checkForNegatives(numbers);
