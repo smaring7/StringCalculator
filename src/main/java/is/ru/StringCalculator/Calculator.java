@@ -15,7 +15,8 @@ public class Calculator {
 			checkForNegatives(numbers);
 			return sum(numbers);
 		}
-		return 1;
+		
+		return toInt(text);
 	}
 	
 	private static int toInt(String number) {
