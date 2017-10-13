@@ -6,9 +6,7 @@ public class Calculator {
 		if(text.equals(""))
 			return 0;
 		else if(text.startsWith("//")) {
-			String textParts[] = text.split("[// \n]");
-			String delimiter = textParts[2];
-			String numbers[] = textParts[3].split(delimiter);
+			String numbers[] = changeDelimiter(text);
 			checkForNegatives(numbers);
 			return sum(numbers);
 		}
@@ -46,5 +44,12 @@ public class Calculator {
 				if(negatives != "") 
 				throw new IllegalArgumentException("Negatives not allowed: " + negatives);
 			}
+	}
+	
+	private static String[] changeDelimiter(String text) {
+		String textParts[] = text.split("[// \n]");
+		String delimiter = textParts[2];
+		String numbers[] = textParts[3].split(delimiter);
+		return numbers;
 	}
 }
