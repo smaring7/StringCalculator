@@ -1,1 +1,1 @@
-# StringCalculator
+[![Build Status](https://travis-ci.org/smaring7/StringCalculator.svg?branch=master)](https://travis-ci.org/smaring7/StringCalculator)
