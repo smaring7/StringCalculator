@@ -14,3 +14,5 @@ dependencies{
 	
 	testImplementation 'junit:junit:4.12'
 }
+
+task stage (dependsOn: installDist)
